@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de QR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style>
+        #qrcode {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#generate-btn').click(function() {
+                var url = $('#url-input').val();
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    text: url,
+                    width: 128,
+                    height: 128,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Generador de QR</h1>
+    <input type="text" id="url-input" placeholder="Ingrese la URL">
+    <button id="generate-btn">Generar QR</button>
+    <div id="qrcode"></div>
+</body>
+</html>
