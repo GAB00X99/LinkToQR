@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de QR</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Puedes eliminar la siguiente línea si no necesitas Font Awesome 6 -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
@@ -115,10 +113,8 @@
             $('#generate-btn').click(function() {
                 var url = $('#url-input').val();
                 if (url.trim() !== "") {
-                    // Eliminar el QR anterior
                     $('#qrcode').empty();
     
-                    // Crear el nuevo código QR
                     var qrcode = new QRCode(document.getElementById("qrcode"), {
                         text: url,
                         width: 128,
@@ -128,12 +124,10 @@
                         correctLevel: QRCode.CorrectLevel.H
                     });
     
-                    // Mostrar el botón de descarga
                     $('#download-btn').show();
                 }
             });
     
-            // Al hacer clic en el botón de descarga, generar un enlace de descarga
             $('#download-btn').click(function() {
                 var canvas = $('#qrcode canvas')[0];
                 var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
