@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generador de QR</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Puedes eliminar la siguiente línea si no necesitas Font Awesome 6 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
@@ -74,6 +75,7 @@
         #download-btn:hover {
             background-color: #2980b9;
         }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -109,7 +111,7 @@
     </div>
 
     <script>
-        $(document).ready(function() {
+        $(function() {
             $('#generate-btn').click(function() {
                 var url = $('#url-input').val();
                 if (url.trim() !== "") {
@@ -140,20 +142,15 @@
         });
     </script>
     
-</body>
-</html>
-<!-- Agrega este código al final de tu cuerpo HTML, justo antes del cierre de la etiqueta </body> -->
-<footer>
-  
     <footer>
         <div class="footer-links">
             <h4>Sígueme en:</h4>
             <div class="social-link">
                 <a href="https://www.linkedin.com/in/gabriel-ferreyra99/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/GAB00X99" target="_blank"><i class="fab fa-github"></i></a>
-
             </div>
         </div>
     </footer>
-    
-</footer>
+</body>
+</html>
+
