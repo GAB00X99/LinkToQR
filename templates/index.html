@@ -88,6 +88,10 @@
             $('#generate-btn').click(function() {
                 var url = $('#url-input').val();
                 if (url.trim() !== "") {
+                    // Eliminar el QR anterior
+                    $('#qrcode').empty();
+    
+                    // Crear el nuevo código QR
                     var qrcode = new QRCode(document.getElementById("qrcode"), {
                         text: url,
                         width: 128,
@@ -96,12 +100,12 @@
                         colorLight: "#ffffff",
                         correctLevel: QRCode.CorrectLevel.H
                     });
-
+    
                     // Mostrar el botón de descarga
                     $('#download-btn').show();
                 }
             });
-
+    
             // Al hacer clic en el botón de descarga, generar un enlace de descarga
             $('#download-btn').click(function() {
                 var canvas = $('#qrcode canvas')[0];
@@ -110,5 +114,6 @@
             });
         });
     </script>
+    
 </body>
 </html>
